@@ -15,12 +15,6 @@
 
 /* ====== Menu Item ====== */
 .menu-item {
-  opacity: 0;
-  transform: translateY(40px) scale(0.8);
-  animation: fadeIn 1.2s ease-in forwards;
-  animation-timeline: view();
-  animation-range: entry 0% cover 40%;
-
   width: 100%;
   padding: 10px;
   background: linear-gradient(135deg, #110f70, #3e45af, #110f70);
@@ -35,40 +29,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-} /* Animasi Fade In */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px); /* Sedikit pergeseran ke bawah */
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animasi Fade Out */
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(20px); /* Sedikit pergeseran ke bawah */
-  }
-}
-
-/* Class untuk fade in */
-.fade-in {
-  opacity: 0; /* Mulai dengan opacity 0 */
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-/* Class untuk fade out */
-.fade-out {
-  opacity: 1; /* Mulai dengan opacity 1 */
-  animation: fadeOut 1s ease-in-out forwards;
 }
 .menu-item .tittle-menu {
   min-width: 100px; /* Sesuaikan dengan panjang judul terpanjang */

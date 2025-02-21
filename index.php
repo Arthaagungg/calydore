@@ -124,7 +124,7 @@ if ($result_logo->num_rows > 0) {
   <!-- Menu outbound end -->
 
   <!-- Menu catering Start -->
-  <div class="menu-item fade-in" onclick="toggleContent('catering', this)">
+  <div class="menu-item" onclick="toggleContent('catering', this)">
     <span class="tittle-menu">Catering</span>
     <span class="menu-description">
       "Hidangan berkualitas untuk berbagai acara, dengan cita rasa istimewa."
@@ -175,32 +175,6 @@ include_once 'includes/footer.php';
   if ('scrollRestoration' in history) {
     history.scrollRestoration = "manual";
   }
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuItems = document.querySelectorAll(".menu-item");
-
-    const checkVisibility = () => {
-      menuItems.forEach((item) => {
-        const itemTop = item.getBoundingClientRect().top;
-        const itemBottom = item.getBoundingClientRect().bottom;
-
-        // Jika elemen masuk ke viewport
-        if (itemTop < window.innerHeight && itemBottom > 0) {
-          item.classList.add("fade-in");
-          item.classList.remove("fade-out");
-        } else {
-          // Jika elemen keluar dari viewport
-          item.classList.add("fade-out");
-          item.classList.remove("fade-in");
-        }
-      });
-    };
-
-    // Panggil fungsi saat halaman di-scroll
-    window.addEventListener("scroll", checkVisibility);
-
-    // Panggil fungsi saat halaman pertama kali dimuat
-    checkVisibility();
-  });
 </script>
 <script type="application/ld+json">
 {
@@ -231,8 +205,10 @@ include_once 'includes/footer.php';
     "https://www.facebook.com/CalydoreOfficial"
   ]
 }
-
 </script>
+
+
+
 
 </body>
 
