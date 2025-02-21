@@ -697,15 +697,6 @@ input[type="checkbox"]:not(:checked) + .for-dropdown svg #bottom-line {
   color: #ffd700;
 }
 /* Styling the menu items */
-.menu-item {
-  font-size: 1.2rem;
-  padding: 12px 0;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 1rem;
-  color: #495057;
-}
 
 .menu-item i {
   margin-right: 15px;
@@ -715,7 +706,6 @@ input[type="checkbox"]:not(:checked) + .for-dropdown svg #bottom-line {
 
 .menu-item:hover {
   background-color: #e9ecef; /* Light hover effect */
-  border-radius: 5px; /* Rounded corners on hover */
 }
 
 /* Dropdown Menu */
