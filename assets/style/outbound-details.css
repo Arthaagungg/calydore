@@ -1,0 +1,243 @@
+/* Reset default margin, padding dan box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid Container */
+.row {
+  max-width: 100%;
+  margin: 0 auto; /* Menjaga grid tetap di tengah */
+  padding: 0 15px; /* Memberikan margin kiri dan kanan */
+}
+
+/* Grid layout untuk halaman */
+.grid-container {
+  display: grid;
+  grid-template-columns: 40% 58%;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px; /* Menambahkan border-radius pada container */
+  overflow: hidden; /* Agar konten tidak keluar dari border-radius */
+}
+
+.grid-item {
+  text-align: left;
+  align-items: center;
+  color: #ffffff;
+  background: linear-gradient(
+    to bottom,
+    #151284 0%,
+    /* Warna atas (gelap) */ #060537 100% /* Warna bawah (biru terang) */
+  );
+  border-radius: 10px; /* Menambahkan border-radius pada setiap item */
+}
+
+/* Responsif untuk layar mobile */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Menjadi satu kolom pada perangkat mobile */
+    width: 100%;
+  }
+}
+
+/* Styling untuk slideshow */
+.slideshow {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Mengatur gambar untuk mengisi seluruh container */
+  object-position: center; /* Menjaga gambar tetap terpusat */
+}
+
+/* Desc Outbound Styling */
+.item1 p {
+  font-size: 16px;
+  padding: 5px;
+}
+
+/* Styling untuk Title */
+.title-category {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-shadow: 0 0 2px #800000, 0 0 5px #800000, 0 0 1px #800000,
+    0 0 1px #800000, 0 0 3px #800000;
+  font-size: 26px;
+  font-weight: 900;
+  line-height: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffbe00; /* Warna mencolok */
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif; /* Font elegan */
+  letter-spacing: 2px;
+  padding: 10px 0;
+}
+
+/* Styling untuk Deskripsi */
+.deskripsi {
+  font-size: 11px;
+  font-weight: 500;
+  color: #444;
+  line-height: 1.6;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .deskripsi {
+    font-size: 16px;
+    max-width: 95%;
+  }
+}
+
+/* Styling untuk outbound
+ box */
+.sub-box {
+  flex: 1 1 30%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 10px rgba(62, 69, 175, 0.686);
+  position: relative;
+}
+.outbound-box {
+  border-radius: 20px;
+  flex-wrap: wrap; /* Membuat sub-box bisa berpindah baris jika tidak muat */
+  gap: 20px; /* Memberikan jarak antar sub-box */
+  align-items: flex-end;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+.outbound-box img {
+  height: 250px;
+}
+
+/* Konten dalam outbound box */
+.outbound-box .sub-box-content {
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* Location and Rating */
+.outbound-box .location-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* Styling untuk info harga */
+.outbound-box .price-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -6px;
+}
+
+.outbound-box .desc1 {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: -9px;
+}
+
+.outbound-box .price-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.outbound-box .price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.outbound-box .desc2 {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Styling untuk button */
+.btn-selengkapnya {
+  background-color: #007bff;
+  color: #ffd700;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-weight: bold; /* Membuat teks <p> menjadi bold */
+  text-align: center;
+  display: flex; /* Membuat tombol menjadi fleksibel */
+  justify-content: center; /* Menyusun teks secara horizontal di tengah */
+  align-items: center; /* Menyusun teks secara vertikal di tengah */
+  height: 40px; /* Menentukan tinggi tombol untuk memudahkan pemusatan */
+}
+
+.btn-selengkapnya:hover {
+  background-color: #ffbe00;
+  color: #800000;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .outbound-box .btn-selengkapnya {
+    font-size: 14px; /* Mengurangi ukuran font di layar kecil */
+    padding: 10px 20px; /* Mengatur padding pada tombol */
+  }
+}
+
+.divider-outbound {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 0;
+  margin-bottom: 10px;
+}
+
+.divider-outbound::before,
+.divider-outbound::after {
+  content: "";
+  flex: 1;
+  border-top: 3px solid #ffffff;
+}
+
+.divider-outbound span {
+  margin: 0 10px;
+  font-size: 2ch;
+  font-weight: bold;
+  color: #ffffff;
+}
+.loadmore {
+  background-color: #ffbe00; /* Kuning cerah */
+  color: #800000;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  margin: 10px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.loadmore:hover {
+  background-color: #800000;
+  color: #ffbe00;
+}

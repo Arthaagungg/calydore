@@ -1,0 +1,502 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+.hide-header {
+  display: none !important;
+}
+/* Container utama menggunakan Grid */
+.profile-container {
+  display: grid;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  padding: 20px;
+}
+
+.profile-container .profile-album {
+  gap: 10px;
+}
+
+/* Styling for the villa details section */
+.profile-details {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+  max-width: 600px; /* Lebar maksimum detail */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk bagian detail villa */
+.profile-details h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.location,
+.rating {
+  font-size: 16px;
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.price-info {
+  margin-bottom: 15px;
+}
+
+.price-info .desc1 {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+.price-info .kapasitas {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 0;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ce1111;
+}
+
+/* Informasi fasilitas */
+
+.fasilitas h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.fasilitas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fasilitas li {
+  display: flex;
+  align-items: flex-start; /* Pastikan teks mulai dari atas */
+  gap: 10px;
+  margin-bottom: 5px;
+  margin-left: 10%;
+  font-size: 14px;
+}
+
+.fasilitas i {
+  font-size: 18px; /* Ukuran ikon */
+  width: 24px; /* Lebar tetap agar ikon sejajar */
+  text-align: center;
+  flex-shrink: 0; /* Ikon tidak mengecil */
+}
+
+.fasilitas span {
+  flex: 1;
+  line-height: 1.4;
+  text-align: left; /* Pastikan teks tetap rata kiri */
+  word-break: break-word; /* Supaya teks panjang turun ke bawah */
+  display: block; /* Pastikan tetap dalam 1 blok agar sejajar */
+}
+
+@media (max-width: 480px) {
+  .fasilitas li {
+    align-items: flex-start; /* Pastikan teks turun ke bawah */
+    gap: 8px;
+  }
+
+  .fasilitas i {
+    font-size: 16px; /* Ukuran ikon lebih kecil di layar kecil */
+    width: 20px;
+  }
+
+  .fasilitas span {
+    font-size: 14px;
+    word-break: break-word;
+    display: block; /* Memastikan teks tetap dalam satu blok */
+  }
+}
+
+/* Tata letak untuk desktop */
+@media (min-width: 768px) {
+  .profile-container {
+    padding: 10px;
+    grid-template-columns: 2fr 1fr; /* Kolom pertama untuk profile-image dan profile-detail, kedua untuk profile-rekomendasi */
+    grid-template-areas:
+      "profile-image profile-rekomendasi"
+      "profile-detail profile-rekomendasi"
+      "menu-utama menu-utama"
+      "menu-opsional menu-opsional"
+      "profile-album profile-album"; /* profile-album akan mengisi seluruh baris di bawah */
+  }
+
+  .profile-image {
+    grid-area: profile-image;
+    max-width: 650px;
+  }
+  .profile-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .profile-rekomendasi {
+    grid-area: profile-rekomendasi;
+    width: 100%; /* Agar tetap mengisi ruang yang ada */
+  }
+
+  .profile-detail {
+    grid-area: profile-detail;
+  }
+
+  .profile-album {
+    grid-area: profile-album;
+  }
+  .menu-utama {
+    grid-area: menu-utama;
+  }
+  .menu-opsional {
+    grid-area: menu-opsional;
+  }
+}
+
+/* Tata letak untuk mobile */
+@media (max-width: 767px) {
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: 1fr; /* Semua elemen menggunakan lebar penuh */
+    grid-template-areas:
+      "profile-image"
+      "profile-detail"
+      "menu-utama"
+      "menu-opsional"
+      "profile-album"
+      "profile-rekomendasi"; /* Menampilkan profile-rekomendasi setelah profile-album */
+  }
+  .profile-image,
+  .profile-detail,
+  .profile-rekomendasi,
+  .profile-album,
+  .menu-utama,
+  .menu-opsional {
+    width: 100%; /* Pastikan semuanya menggunakan lebar penuh */
+    max-width: 95%; /* Tidak melebihi lebar kontainer */
+    margin: 10px auto;
+  }
+  .profile-image {
+    grid-area: profile-image;
+    max-width: 95%;
+  }
+
+  .profile-detail {
+    grid-area: profile-detail;
+  }
+
+  .profile-album {
+    margin-bottom: 10px;
+    grid-area: profile-album;
+  }
+
+  .profile-rekomendasi {
+    grid-area: profile-rekomendasi;
+  }
+  .profile-rekomendasi {
+    margin-top: 10px;
+  }
+  .recommended-image {
+    height: 140px; /* Tinggi gambar lebih kecil agar pas */
+  }
+
+  .recommended-details h4 {
+    font-size: 16px; /* Ukuran teks lebih kecil */
+  }
+
+  .recommended-details p {
+    font-size: 13px; /* Ukuran teks lebih kecil */
+  }
+}
+
+/* Styling elemen */
+.profile-image,
+.profile-detail,
+.profile-rekomendasi,
+.profile-album {
+  padding: 20px;
+  border-radius: 8px;
+}
+.carousel {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.carousel-item img {
+  border-radius: 10px;
+  width: 100%;
+  height: 300px; /* Atur tinggi sesuai kebutuhan */
+  object-fit: cover; /* Mengisi container tanpa distorsi */
+} /* Warna untuk perbedaan elemen (opsional) */
+.profile-image {
+  background-color: #ffffff;
+  width: 100%;
+  margin: 0 auto; /* Memastikan container gambar berada di tengah */
+}
+
+/* General styles for the Album */
+.profile-album {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.profile-album h3 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Album Container */
+.album-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 5px;
+  justify-items: center;
+}
+
+/* Individual Album Item */
+.album-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.album-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+.album-item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.album-image:hover {
+  opacity: 0.8;
+}
+.profile-album {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.menu-utama {
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(
+    to bottom,
+    #151284 0%,
+    /* Warna atas (gelap) */ #060537 100% /* Warna bawah (biru terang) */
+  );
+  color: white;
+  border-radius: 10px;
+}
+.menu-opsional {
+  margin-top: 40px;
+  padding: 20px;
+  background: linear-gradient(
+    to top,
+    #151284 0%,
+    /* Warna atas (gelap) */ #060537 100% /* Warna bawah (biru terang) */
+  );
+  color: white;
+  border-radius: 10px;
+}
+
+/* Styling untuk rekomendasi villa */
+.profile-rekomendasi {
+  background-color: #41469370;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+/* Styling untuk daftar villa rekomendasi */
+.profile-rekomendasi h3 {
+  font-size: 24px;
+  color: #ffbe00;
+  margin-bottom: 15px;
+}
+
+.profile-rekomendasi ul {
+  list-style: none; /* Menghilangkan bullet point pada list */
+  padding: 0; /* Menghilangkan padding bawaan */
+
+  /* Grid responsif untuk mengatur item secara otomatis */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* Membuat kolom minimal 250px, dan akan menyesuaikan sendiri */
+
+  gap: 15px; /* Jarak antar item */
+}
+
+.profile-rekomendasi li {
+  overflow: hidden; /* Mencegah konten keluar dari batas elemen */
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #800000;
+  color: rgb(255, 255, 255);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-rekomendasi li:hover {
+  transform: translateY(-5px); /* Mengangkat elemen sedikit ke atas */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); /* Menambahkan efek bayangan lebih kuat */
+}
+
+.recommended-image {
+  width: 120px; /* Ukuran gambar rekomendasi lebih kecil */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.recommended-details {
+  margin: 0 10px;
+  width: 150px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.recommended-details h4 {
+  font-size: 14px; /* Ukuran font nama villa lebih kecil */
+  color: rgb(255, 255, 255);
+  margin-bottom: 5px;
+  margin: 5px 0; /* Jarak antar teks */
+}
+
+.recommended-details p {
+  font-size: 12px; /* Ukuran font deskripsi lebih kecil */
+  color: #ffffff;
+}
+.villa-details {
+  display: flex;
+  flex-direction: column; /* Untuk membuat elemen-elemen sejajar secara vertikal */
+  margin-bottom: 10px;
+}
+.villa-details .description {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.villa-details h2,
+.villa-details p,
+.villa-details .price-info {
+  margin: 0; /* Menghapus margin default */
+}
+
+/* Jika ingin ikon lebih kecil, Anda dapat menambahkan ini */
+.icon-small {
+  font-size: 10px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0 0;
+  margin-bottom: 10px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-top: 3px solid #ffffff;
+}
+
+.divider span {
+  margin: 0 10px;
+  font-size: 2ch;
+  font-weight: bold;
+  color: #ffffff;
+}
+/* Container untuk gambar dan teks */
+.image-with-text {
+  position: relative;
+  width: 100%;
+  max-width: 650px; /* Sesuaikan dengan kebutuhan */
+  margin: 10px;
+  border-radius: 16px; /* Border radius */
+  overflow: hidden; /* Pastikan border radius bekerja */
+}
+
+/* Gambar */
+.image-with-text img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px; /* Border radius */
+}
+
+/* Teks di tengah gambar */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3); /* Background semi-transparan */
+  backdrop-filter: blur(10px); /* Efek blur */
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Border dengan transparansi */
+  border-radius: 8px; /* Border radius untuk teks */
+  color: #fff; /* Warna teks */
+  font-size: 1rem; /* Ukuran teks */
+  font-weight: bold; /* Ketebalan teks */
+  z-index: 2; /* Pastikan teks di atas gambar */
+}
+
+/* Efek hover (opsional) */
+.image-with-text:hover .text-overlay {
+  background: rgba(255, 255, 255, 0.5); /* Lebih transparan saat hover */
+  border-color: rgba(255, 255, 255, 0.8); /* Border lebih terang saat hover */
+}

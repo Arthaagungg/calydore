@@ -1,0 +1,339 @@
+@font-face {
+  font-family: "slick";
+  src: url("../src/slick/fonts/slick.woff2") format("woff2"),
+    url("../src/slick/fonts/slick.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ====== Menu Container ====== */
+.menu-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+/* ====== Menu Item ====== */
+.menu-item {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #110f70, #3e45af, #110f70);
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-item .tittle-menu {
+  min-width: 100px; /* Sesuaikan dengan panjang judul terpanjang */
+}
+.menu-description {
+  flex-grow: 1;
+  padding-left: 10px;
+  font-size: 0.8rem;
+  color: #ffffff;
+  max-width: 70%;
+}
+
+.menu-item i {
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+/* Menambahkan animasi rotasi untuk ikon panah */
+.menu-item i.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+/* ====== Content Box Styling ====== */
+
+/* ====== Sub-box Styling ====== */
+.sub-box {
+  flex: 1 1 30%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 10px rgba(62, 69, 175, 0.686);
+  position: relative;
+  max-height: 550px; /* Tambahkan tinggi maksimal untuk menghindari layout melar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sub-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+/* ====== Villa Box Styling ====== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Mulai dari atas */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Ke posisi normal */
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-30px); /* Menghilang ke atas */
+  }
+}
+
+.menu-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: translateY(-30px);
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out,
+    transform 0.4s ease-in-out;
+}
+
+.menu-content.active {
+  flex-wrap: wrap; /* Membuat sub-box bisa berpindah baris jika tidak muat */
+  gap: 20px; /* Memberikan jarak antar sub-box */
+  border-radius: 20px;
+  align-items: flex-end;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  width: 100%;
+  margin-bottom: 25px;
+  opacity: 1;
+  max-height: 100%; /* Sesuaikan tinggi maksimal sesuai konten */
+  animation: fadeInDown 0.5s ease-in-out forwards; /* Animasi muncul dari atas */
+}
+
+.menu-content.fade-out {
+  opacity: 0;
+  max-height: 0;
+
+  animation: fadeOutUp 0.4s ease-in-out forwards; /* Animasi menghilang ke atas */
+}
+
+/* ====== Location and Rating ====== */
+.location-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.sub-box .location {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #444;
+  max-width: 60%; /* Batasi agar lokasi tidak mengambil seluruh lebar */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sub-box .rating {
+  font-size: 0.8rem;
+  color: #444;
+  text-align: right;
+  flex-shrink: 0; /* Supaya rating tidak menyusut jika lokasi panjang */
+}
+.sub-box .location,
+.rating {
+  font-size: 0.7rem;
+}
+
+/* ====== Ensure that content and villa-box align next to each other */
+.menu-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sub-box .menu-item,
+.content-box {
+  flex: 1 1 45%; /* Adjust this value depending on how you want them to appear */
+}
+
+/* ====== Info Styling  ====== */
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.descTitle {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #555;
+  max-height: 80px; /* Menentukan batas ketinggian deskripsi */
+  overflow: hidden;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.desc1 {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: -9px;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.desc2 {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+}
+
+.price-btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ====== Tombol dalam Sub-box ====== */
+.btn-selengkapnya {
+  background-color: #007bff;
+  color: #ffd700;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.btn-selengkapnya:hover {
+  background-color: #ffbe00;
+  color: #800000;
+}
+.btn-layanan {
+  background-color: #ffbe00; /* Kuning cerah */
+  color: #800000;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  margin: 10px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.loadmore {
+  background-color: #ffbe00; /* Kuning cerah */
+  color: #800000;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  margin: 10px auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.loadmore:hover {
+  background-color: #800000;
+  color: #ffbe00;
+}
+/* ====== Responsiveness ====== */
+@media (max-width: 768px) {
+  .sub-box {
+    flex: 1 1 100%;
+  }
+  .descTitle {
+    max-height: 60px;
+  }
+}
+.sub-box-content {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+}
+/* ====== Slick Slider ====== */
+.slick-slider {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slick-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Menggunakan font 'slick' untuk tombol prev dan next */
+.slick-prev,
+.slick-next {
+  font-family: "slick", Arial, sans-serif; /* Menggunakan font 'slick' */
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slick-prev-custom,
+.slick-next-custom {
+  font-family: "slick", Arial, sans-serif; /* Menggunakan font 'slick' */
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.slick-prev-custom {
+  left: -30px;
+}
+
+.slick-next-custom {
+  right: -30px;
+}
+.btn-layanan:hover {
+  background-color: #800000;
+  color: #ffd700;
+}

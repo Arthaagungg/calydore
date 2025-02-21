@@ -1,0 +1,11 @@
+
+# Direktori vendor yang dihasilkan oleh Composer
+# File konfigurasi lokal
+.env
+.htaccess
+# File log
+*.log
+
+# File cache PHPUnit
+/.phpunit.result.cache
+dashboardV2/

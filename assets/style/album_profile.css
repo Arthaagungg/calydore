@@ -1,0 +1,100 @@
+/* Style Swiper */
+.swiper-container {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+}
+
+.swiper-slide {
+  width: 250px;
+  height: 300px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide-active {
+  transform: scale(1.1);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Mengubah ukuran tombol Next dan Prev */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 30px; /* Ubah ukuran lebar */
+  height: 30px; /* Ubah ukuran tinggi */
+}
+
+/* Mengubah ukuran ikon panah di dalam tombol */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 15px; /* Ubah ukuran ikon panah */
+  color: white; /* Ubah warna panah */
+}
+
+/* Tambahkan background agar lebih terlihat */
+.swiper-button-next,
+.swiper-button-prev {
+  background: rgba(0, 0, 0, 0.5); /* Warna hitam transparan */
+  border-radius: 50%; /* Membuat tombol menjadi bulat */
+}
+
+/* Efek hover agar lebih menarik */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  display: block;
+  object-fit: contain; /* Menjaga rasio gambar tanpa memotong */
+  background: transparent;
+}
+.modal-content img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: red;
+}

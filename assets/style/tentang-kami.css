@@ -1,0 +1,80 @@
+.faq-container {
+  margin: 0 20px;
+  color: #ffffff;
+}
+
+.faq-item {
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+  position: relative;
+}
+
+.faq-item.active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ccc;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.faq-question::after {
+  content: "+";
+  font-size: 18px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-question::after {
+  content: "-";
+}
+
+.produk-tk {
+  padding: 20px;
+}
+
+.produk-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.produk-nama {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+.produk-icon {
+  color: #ffffff;
+  font-size: 24px;
+  margin-left: auto;
+}
+
+.produk-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,37 @@
+[20-Feb-2025 03:44:44 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                ORDER BY FIELD(v.id, )' at line 5 in /home/calq6427/public_html/page/glamping.php:80
+Stack trace:
+#0 /home/calq6427/public_html/page/glamping.php(80): mysqli->prepare()
+#1 {main}
+  thrown in /home/calq6427/public_html/page/glamping.php on line 80
+[20-Feb-2025 11:01:49 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 11:01:49 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 11:07:09 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 11:07:09 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 11:07:11 Asia/Jakarta] PHP Warning:  Undefined variable $totalRows in /home/calq6427/public_html/page/result.php on line 190
+[20-Feb-2025 11:07:11 Asia/Jakarta] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')
+                ORDER BY FIELD(v.id, )' at line 5 in /home/calq6427/public_html/page/glamping.php:80
+Stack trace:
+#0 /home/calq6427/public_html/page/glamping.php(80): mysqli->prepare()
+#1 {main}
+  thrown in /home/calq6427/public_html/page/glamping.php on line 80
+[20-Feb-2025 11:19:46 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 11:19:46 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 12:12:28 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 12:12:28 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:42:45 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:42:45 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:42:49 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:42:49 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:42:51 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:42:51 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:43:34 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 18:43:34 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:26:41 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:26:41 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:26:41 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:26:41 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:46:40 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:46:40 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:55:16 Asia/Jakarta] PHP Warning:  Undefined variable $pageURL in /home/calq6427/public_html/includes/header.php on line 53
+[20-Feb-2025 20:55:16 Asia/Jakarta] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home/calq6427/public_html/includes/header.php on line 53
