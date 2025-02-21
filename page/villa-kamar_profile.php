@@ -135,7 +135,7 @@ require_once '../includes/header.php';
     </div>
 
     <div class="profile-album">
-        <h3>Album Gambar</h3>
+        <h3>Album Villa Kamar</h3>
         <div class="swiper-container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
