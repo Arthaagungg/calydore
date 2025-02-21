@@ -1,0 +1,8 @@
+deployment:
+  tasks:
+    # Set the path for the public_html directory
+    - source ~/.bashrc # Memuat environment variables
+    - export DEPLOYPATH=/home/$CPANEL_USERNAME/public_html/
+    - /bin/cp -a * $DEPLOYPATH
+    # Set the correct file permissions for files in public_html
+    - /bin/chmod -R 755 $DEPLOYPATH
