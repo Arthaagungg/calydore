@@ -80,35 +80,14 @@ if ($result->num_rows > 0) {
 
   <link rel="icon" type="image/x-icon" href="<?php echo BASE_URL; ?>/assets/favico.ico">
   <!-- Import custom CSS -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  </noscript>
-
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  </noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  </noscript>
-  <link rel="preload" href="<?php echo BASE_URL; ?>/assets/style/style.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/style/style.css">
-  </noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/style/style.css">
   <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/style/villa.css">
-  <link rel="preload" href="<?php echo BASE_URL; ?>/assets/style/category.css" as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/style/category.css">
-  </noscript>
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/style/category.css">
 
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
@@ -371,6 +350,13 @@ if ($result->num_rows > 0) {
       color: white;
     }
   </style>
+
+  <!-- JavaScript: Slick, jQuery, and Bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="<?php echo BASE_URL; ?>/assets/js/script.js"></script>
+  <script src="<?php echo BASE_URL; ?>/assets/src/bootstrap-5.3.0-alpha1/js/bootstrap.min.js"></script>
+
   <script>
     $(document).ready(function () {
       $('.toggle-submenu').click(function () {
@@ -380,14 +366,8 @@ if ($result->num_rows > 0) {
     });
   </script>
 
-
-  <!-- JavaScript: Slick, jQuery, and Bootstrap -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  <script defer src="<?php echo BASE_URL; ?>/assets/js/script.js"></script>
-  <script defer src="<?php echo BASE_URL; ?>/assets/src/bootstrap-5.3.0-alpha1/js/bootstrap.min.js"></script>
-
-  <script>document.addEventListener("DOMContentLoaded", function () {
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
       const searchInput = document.getElementById("searchInput");
       const suggestions = document.getElementById("suggestions");
       let debounceTimer;
