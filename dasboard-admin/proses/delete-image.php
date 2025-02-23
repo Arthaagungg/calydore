@@ -6,7 +6,7 @@ require_once '../database/config-imagekit.php'; // Panggil konfigurasi ImageKit
 // Validasi ID dan nama gambar
 if (isset($_POST['id']) && isset($_POST['image']) && !empty($_POST['id']) && !empty($_POST['image'])) {
     $id = intval($_POST['id']);
-    $image_name = $_POST['image'];
+    $image_name = $_POST['fild_id'];
     $category = preg_replace('/[^a-zA-Z0-9_]/', '', $_POST['category']);
     // Path file gambar
     $image_fild = $image_name;

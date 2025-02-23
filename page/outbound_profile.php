@@ -109,8 +109,6 @@ require_once '../includes/header.php';
                         if (!empty($feature['icon_link'])) {
                             echo '<li>' . ($feature['icon_link']) . '</i> '
                                 . htmlspecialchars(ucwords(str_replace('_', ' ', $feature['feature_name'])))
-                                . ': '
-                                . htmlspecialchars(ucwords($feature['feature_value']))
                                 . '</li>';
                         }
                     }
@@ -197,7 +195,7 @@ require_once '../includes/header.php';
     </div>
 
     <div class="profile-album">
-        <h3>Album Gambar</h3>
+        <h3>Album Outbound</h3>
         <div class="swiper-container">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
