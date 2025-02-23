@@ -350,9 +350,6 @@ if ($result->num_rows > 0) {
       color: white;
     }
   </style>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
   <script>
     $(document).ready(function () {
       $('.toggle-submenu').click(function () {
@@ -368,85 +365,74 @@ if ($result->num_rows > 0) {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="<?php echo BASE_URL; ?>/assets/js/script.js"></script>
   <script src="<?php echo BASE_URL; ?>/assets/src/bootstrap-5.3.0-alpha1/js/bootstrap.min.js"></script>
-  <script>
-    const searchInput2 = document.getElementById('searchInput');
-    const suggestions = document.getElementById('suggestions');
-    const form = document.querySelector('form');
+  <script>document.addEventListener("DOMContentLoaded", function () {
+      const searchInput = document.getElementById("searchInput");
+      const suggestions = document.getElementById("suggestions");
+      let debounceTimer;
 
-    searchInput2.addEventListener('input', function () {
-      const query = this.value;
+      searchInput.addEventListener("input", function () {
+        clearTimeout(debounceTimer);
+        const query = this.value.trim();
 
-      if (query.length > 0) {
-        fetch(`<?php echo BASE_URL; ?>/includes/database-user/autocomplete.php?search=${encodeURIComponent(query)}`)
-          .then(response => response.json())
-          .then(data => {
-            suggestions.innerHTML = '';
-            if (data.length > 0) {
-              data.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item.value;
+        if (query.length > 0) {
+          debounceTimer = setTimeout(() => {
+            fetch(`<?php echo BASE_URL; ?>/includes/database-user/autocomplete.php?search=${encodeURIComponent(query)}`)
+              .then(response => response.json())
+              .then(data => {
+                suggestions.innerHTML = "";
+                if (data.length > 0) {
+                  data.forEach(item => {
+                    const li = document.createElement("li");
+                    li.textContent = item.value;
 
-                let tableName = item.table.replace(/_/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+                    let tableName = item.table.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
+                    tableName = tableName.replace("Features", "Fasilitas");
 
-                tableName = tableName.replace('Features', 'Fasilitas');
+                    const tableSpan = document.createElement("span");
+                    tableSpan.textContent = tableName;
+                    tableSpan.style.float = "right";
+                    tableSpan.style.fontSize = "1em";
+                    tableSpan.style.color = "#888";
 
-                const tableSpan = document.createElement('span');
-                tableSpan.textContent = tableName;
-                tableSpan.style.float = 'right';
-                tableSpan.style.fontSize = '1em';
-                tableSpan.style.color = '#888';
+                    li.appendChild(tableSpan);
 
-                li.appendChild(tableSpan);
+                    li.addEventListener("click", function () {
+                      searchInput.value = item.value;
+                      window.location.href = `<?php echo BASE_URL; ?>/page/result.php?search=${encodeURIComponent(item.value)}&table=${encodeURIComponent(item.table)}`;
+                    });
 
-                li.addEventListener('click', function () {
-                  searchInput2.value = item.value;
-                  window.location.href = `<?php echo BASE_URL; ?>/page/result.php?search=${encodeURIComponent(item.value)}&table=${encodeURIComponent(item.table)}`;
-                });
-                suggestions.appendChild(li);
+                    suggestions.appendChild(li);
+                  });
+                  showSuggestions();
+                } else {
+                  hideSuggestions();
+                }
+              })
+              .catch(error => {
+                console.error("Error:", error);
               });
-              suggestions.style.display = 'block';
-            } else {
-              suggestions.style.display = 'none';
-            }
-          })
-          .catch(error => {
-            console.error('Error:', error);
-          });
-      } else {
-        suggestions.innerHTML = '';
-        suggestions.style.display = 'none';
+          }, 300); // Debounce 300ms
+        } else {
+          hideSuggestions();
+        }
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!searchInput.contains(e.target) && !suggestions.contains(e.target)) {
+          hideSuggestions();
+        }
+      });
+
+      function showSuggestions() {
+        suggestions.style.display = "block";
+        document.body.classList.add("no-scroll");
+      }
+
+      function hideSuggestions() {
+        suggestions.innerHTML = "";
+        suggestions.style.display = "none";
+        document.body.classList.remove("no-scroll");
       }
     });
 
-    document.addEventListener('click', function (e) {
-      if (e.target !== searchInput2 && !suggestions.contains(e.target)) {
-        suggestions.innerHTML = '';
-        suggestions.style.display = 'none';
-      }
-    });
-    function showSuggestions() {
-      suggestions.style.display = 'block';
-      document.body.classList.add('no-scroll');
-    }
-
-    function hideSuggestions() {
-      suggestions.style.display = 'none';
-      document.body.classList.remove('no-scroll');
-    }
-
-    searchInput2.addEventListener('input', function () {
-      const query = searchInput2.value;
-
-      if (query) {
-        showSuggestions();
-      } else {
-        hideSuggestions();
-      }
-    });
-
-    document.addEventListener('click', function (event) {
-      if (!searchInput.contains(event.target) && !suggestions.contains(event.target)) {
-        hideSuggestions();
-      }
-    });
   </script>
