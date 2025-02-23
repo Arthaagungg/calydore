@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <h5>Alamat Kami</h5>
+        <h3>Alamat Kami</h3>
         <div class="card w-50 ">
           <div class="ratio ratio-1x1">
             <iframe title="Peta lokasi Calidore, Bogor"
@@ -24,7 +24,7 @@
       </div>
 
       <div class="col-lg-3">
-        <h5>Sosial Media</h5>
+        <h3>Sosial Media</h3>
         <p><i class="bi bi-instagram"></i> @calydore.official</p>
         <p><i class="bi bi-tiktok"></i> @calydore.official</p>
         <p><i class="bi bi-facebook"></i> Calydore Official</p>
@@ -32,7 +32,7 @@
       </div>
 
       <div class="col-lg-3">
-        <h5>Contact</h5>
+        <h3>Contact</h3>
         <p><i class="bi bi-geo-alt-fill"></i> Jl. Raya Puncak, Kopo, Kec. Cisarua, Kabupaten Bogor, Jawa Barat 16750
         </p>
         <p><i class="bi bi-telephone-fill"></i> +62 877 7891 1805</p>
