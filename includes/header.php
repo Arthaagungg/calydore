@@ -218,11 +218,12 @@ if ($result->num_rows > 0) {
 
 
     <div class="sec-center">
-      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown" />
+      <input class="dropdown" type="checkbox" id="dropdown" name="dropdown" aria-label="Aktifkan Dropdown">
       <button class="btn btn-menu" type="button" name="dropdown" data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-        <i class="fa-solid fa-bars"></i>
+        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i> <!-- Contoh ikon -->
       </button>
+
     </div>
   </div>
   <!-- Offcanvas Menu -->
