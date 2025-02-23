@@ -194,7 +194,6 @@ try {
         }
     }
 
-    // Update fitur
     foreach ($features as $feature_name => $feature_value) {
         if (empty($feature_value)) {
             continue;
@@ -230,16 +229,14 @@ try {
             INSERT INTO {$category}_features ({$category}_id, feature_name, feature_value, icons_link) 
             VALUES (?, ?, ?, ?) 
             ON DUPLICATE KEY UPDATE 
-            feature_value = ?, 
-            icons_link = ?";
+            feature_value = VALUES(feature_value), 
+            icons_link = VALUES(icons_link)";
 
         $stmt_feature = $conn->prepare($sql_update_feature);
         $stmt_feature->bind_param(
-            "isssss",
+            "isss",
             $id,
             $lowercase_feature_name,
-            $feature_value,
-            $icons_link,
             $feature_value,
             $icons_link
         );

@@ -173,7 +173,7 @@ require_once '../includes/header.php';
                             <?php
                             $slug = "slug_" . $namaTable;
                             ?>
-                            <a href="<?php echo htmlspecialchars($baseUrl . '/' . str_replace('_', '-', $namaTable) . '/' . $villa[$slug]); ?>"
+                            <a href="<?php echo htmlspecialchars(BASE_URL . '/' . str_replace('_', '-', $namaTable) . '/' . $villa[$slug]); ?>"
                                 class="btn-selengkapnya">Selengkapnya</a>
 
                         </div>

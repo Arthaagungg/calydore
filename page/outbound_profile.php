@@ -107,9 +107,11 @@ require_once '../includes/header.php';
                     <?php
                     foreach ($features as $feature) {
                         if (!empty($feature['icon_link'])) {
-                            echo '<li>' . ($feature['icon_link']) . '</i> '
-                                . htmlspecialchars(ucwords(str_replace('_', ' ', $feature['feature_name'])))
-                                . '</li>';
+                            echo '<li>
+                                ' . ($feature['icon_link']) . '
+                                &nbsp;&nbsp;' . htmlspecialchars(ucwords(str_replace('_', ' ', $feature['feature_name']))) .
+                                '
+                            </span></li>';
                         }
                     }
                     ?>
