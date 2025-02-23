@@ -1,5 +1,4 @@
 <?php
-session_start();
 define('SECURE_ACCESS', true);
 
 include_once '../dasboard-admin/database/koneksi.php';

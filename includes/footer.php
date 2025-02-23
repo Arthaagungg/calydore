@@ -1,4 +1,5 @@
-<?php if (!defined('SECURE_ACCESS')) {
+<?php
+if (!defined('SECURE_ACCESS')) {
   http_response_code(404);
   header("Location: " . BASE_URL . " /error.php");
   exit();
@@ -28,7 +29,6 @@
         <p><i class="bi bi-instagram"></i> @calydore.official</p>
         <p><i class="bi bi-tiktok"></i> @calydore.official</p>
         <p><i class="bi bi-facebook"></i> Calydore Official</p>
-        </ul>
       </div>
 
       <div class="col-lg-3">

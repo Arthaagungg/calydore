@@ -118,6 +118,7 @@ function loadMore(categoryName) {
       }
 
       state.isLastPage = data.data.isLastPage;
+
       if (state.isLastPage) {
         const loadMoreButton = document.getElementById(
           `loadMore${capitalizeFirstLetter(categoryName)}`

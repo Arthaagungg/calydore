@@ -7,23 +7,25 @@ ini_set('display_errors', 0);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-ob_start();
+ob_start(); // Tangkap output tambahan
 
 include '../../dasboard-admin/database/koneksi.php';
 
+// Pastikan token CSRF sudah dibuat sebelumnya
+
+// Ambil parameter halaman dan kategori
 $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
 $limit = 4;
 $offset = ($page - 1) * $limit;
 $tab = isset($_GET['tab']) ? htmlspecialchars($_GET['tab'], ENT_QUOTES, 'UTF-8') : 'semua';
 $imagekit_base_url = "https://ik.imagekit.io/bkx7wk6gv";
-
 // Jika tab adalah villa, gunakan daftar ID yang sudah diacak
 if ($tab === 'villa') {
     // Ambil daftar ID yang sudah diacak dari session
     if (!isset($_SESSION['shuffled_villa_ids'])) {
         echo json_encode([
             'status' => 'error',
-            'message' => 'Daftar ID villa tidak ditemukan.'
+            'message' => 'Daftar ID villa kamar tidak ditemukan.'
         ]);
         exit;
     }
@@ -102,9 +104,12 @@ if ($imageResult->num_rows > 0) {
         $villaId = $imageRow['villa_id'];
         $filePath = rtrim($imageRow['file_path'], '/');
         $fileName = ltrim($imageRow['file_name'], '/');
+
+
         $villaImages[$villaId][] = $imagekit_base_url . $filePath . '/' . $fileName;
     }
 }
+
 
 // Bangun data HTML
 $html = '';
@@ -148,7 +153,7 @@ while ($villa = $result->fetch_assoc()) {
                         </div>
                     </div>
                 </div>
-                <a href="' . BASE_URL . '/villa-kamar/' . htmlspecialchars($villa['slug_villa']) . '" class="btn-selengkapnya">Selengkapnya</a>
+                                    <a href="' . BASE_URL . '/villa/' . htmlspecialchars($villa['slug_villa']) . '" class="btn-selengkapnya">Selengkapnya</a>
             </div>
         </div>
     </div>';
@@ -168,6 +173,7 @@ $output = [
     'html' => $html,
     'isLastPage' => $isLastPage
 ];
+error_log("Output JSON: " . json_encode($output)); // Tambahkan log ini
 echo json_encode([
     'status' => 'success',
     'data' => $output

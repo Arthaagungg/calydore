@@ -61,14 +61,13 @@ if (!empty($category)) {
     exit();
 }
 
-ob_end_flush();
 $pageTitle = 'Calydore | Berbagai paket ' . $category . ' Di Outbound Cisarua Puncak';
 $description = "Ikuti kegiatan outbound seru di Puncak Cisarua, Bogor. Aktivitas luar ruangan untuk tim atau keluarga, cocok untuk membangun kerjasama dan kekompakan di kawasan alam yang asri. Hubungi kami untuk paket outbound terbaik.";
 $pageType = "outbound";
 $pageURL = BASE_URL .
     '/daftar-outbound/' . $category;
 
-include '../includes/header.php';
+include_once '../includes/header.php';
 $deskripsi = "";
 switch ($category) {
     case 'game':

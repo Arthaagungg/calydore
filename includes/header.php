@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/../dasboard-admin/database/koneksi.php';
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -6,7 +7,9 @@ if (!defined('SECURE_ACCESS')) {
   http_response_code(404);
   header("Location: " . BASE_URL . "/error.php");
   exit();
+
 }
+
 
 $sql = "SELECT file_path, file_name, image_type FROM assets_images WHERE image_type IN ('logo', 'logo-header', 'logo-menu')";
 $result = $conn->query($sql);
