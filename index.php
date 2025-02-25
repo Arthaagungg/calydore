@@ -58,81 +58,87 @@ if ($result_logo->num_rows > 0) {
 
 
 <div class="menu-container" id="produk">
-  <!-- Menu Villa Start -->
-  <div class="menu-item" onclick="toggleContent('villa', this)">
-    <span class="tittle-menu">Villa</span> <span class="menu-description">
-      "Rasakan kenyamanan premium di villa eksklusif di puncak cisarua , lengkap dengan pemandangan indah untuk momen
-      tak terlupakan."
-    </span>
-    <i class="bi bi-arrow-down-circle"></i>
+  <!-- Menu Villa -->
+  <div class="menu-item" style="background-image: url('assets/image/menu-villa.png');"
+    onclick="toggleContent('villa', this)">
+    <div class="menu-text">
+      <span class="tittle-menu">VILLA</span>
+      <span class="menu-description">
+        "Rasakan kenyamanan premium di villa eksklusif di puncak cisarua, lengkap dengan pemandangan indah untuk momen
+        tak terlupakan."
+      </span>
+    </div>
+    <i class="uil uil-arrow-right"></i>
   </div>
-  <div id="villa-content" class="menu-content" style="display: none;">
-  </div>
-  <!-- Menu Villa End -->
+  <div id="villa-content" class="menu-content" style="display: none;"></div>
 
-  <!--Menu Hotel Start-->
-  <div class="menu-item" onclick="toggleContent('hotel', this)">
-    <span class="tittle-menu">Hotel</span>
-    <span class="menu-description">
-      "Nikmati layanan terbaik dan fasilitas mewah di hotel pilihan kawasan Puncak untuk pengalaman liburan yang
-      sempurna."
-    </span>
-    <i class="bi bi-arrow-down-circle"></i>
+  <!-- Menu Hotel -->
+  <div class="menu-item" style="background-image: url('assets/image/menu-villa.png');"
+    onclick="toggleContent('hotel', this)">
+    <div class="menu-text">
+      <span class="tittle-menu">HOTEL</span>
+      <span class="menu-description">
+        "Nikmati layanan terbaik dan fasilitas mewah di hotel pilihan kawasan Puncak untuk pengalaman liburan yang
+        sempurna."
+      </span>
+    </div>
+    <i class="uil uil-arrow-right"></i>
   </div>
-  <div id="hotel-content" class="menu-content" style="display: none;">
-  </div>
-  <!--End menu hotel end-->
+  <div id="hotel-content" class="menu-content" style="display: none;"></div>
 
-  <!-- Menu Villa kamar Start -->
-  <div class="menu-item" onclick="toggleContent('villa-kamar', this)">
-    <span class="tittle-menu">Villa Kamar</span>
-    <span class="menu-description">
-      "Pilih kamar villa nyaman di puncak cisarua dengan fasilitas unggulan untuk pengalaman staycation ideal."
-    </span>
-    <i class="bi bi-arrow-down-circle"></i>
+  <!-- Menu Villa Kamar -->
+  <div class="menu-item" style="background-image: url('assets/image/menu-villa.png');"
+    onclick="toggleContent('villa-kamar', this)">
+    <div class="menu-text">
+      <span class="tittle-menu">VILLA KAMAR</span>
+      <span class="menu-description">
+        "Pilih kamar villa nyaman di puncak cisarua dengan fasilitas unggulan untuk pengalaman staycation ideal."
+      </span>
+    </div>
+    <i class="uil uil-arrow-right"></i>
   </div>
-  <div id="villa-kamar-content" class="menu-content" style="display: none;">
-  </div>
-  <!-- Menu Villa kamar end -->
+  <div id="villa-kamar-content" class="menu-content" style="display: none;"></div>
 
-  <!-- Menu glamping Start -->
-  <div class="menu-item" onclick="toggleContent('glamping', this)">
-    <span class="tittle-menu">Glamping</span>
-    <span class="menu-description">
-      "Pengalaman alam yang mewah dalam tenda glamping di kawasan alam cisarua puncak, cocok untuk liburan romantis atau
-      keluarga."
-    </span>
-    <i class="bi bi-arrow-down-circle"></i>
+  <!-- Menu Glamping -->
+  <div class="menu-item" style="background-image: url('assets/image/menu-villa.png');"
+    onclick="toggleContent('glamping', this)">
+    <div class="menu-text">
+      <span class="tittle-menu">GLAMPING</span>
+      <span class="menu-description">
+        "Pengalaman alam yang mewah dalam tenda glamping di kawasan alam cisarua puncak, cocok untuk liburan romantis
+        atau keluarga."
+      </span>
+    </div>
+    <i class="uil uil-arrow-right"></i>
   </div>
-  <div id="glamping-content" class="menu-content" style="display: none;">
-  </div>
-  <!-- Menu glamping end -->
+  <div id="glamping-content" class="menu-content" style="display: none;"></div>
 
-  <!-- Menu outbound Start -->
-  <div class="menu-item" onclick="toggleContent('outbound', this)">
-    <span class="tittle-menu">Outbound</span>
-    <span class="menu-description">
-      "Nikmati serunya kegiatan outbound berbagai kawasan alam di cisarua puncak, sempurna untuk kebersamaan dan
-      tantangan seru di alam
-      terbuka."
-    </span>
-    <i class="bi bi-arrow-down-circle"></i>
+  <!-- Menu Outbound -->
+  <div class="menu-item" style="background-image: url('assets/image/menu-villa.png');"
+    onclick="toggleContent('outbound', this)">
+    <div class="menu-text">
+      <span class="tittle-menu">OUTBOUND</span>
+      <span class="menu-description">
+        "Nikmati serunya kegiatan outbound berbagai kawasan alam di cisarua puncak, sempurna untuk kebersamaan dan
+        tantangan seru di alam terbuka."
+      </span>
+    </div>
+    <i class="uil uil-arrow-right"></i>
   </div>
-  <div id="outbound-content" class="menu-content" style="display: none;">
-  </div>
-  <!-- Menu outbound end -->
+  <div id="outbound-content" class="menu-content" style="display: none;"></div>
 
-  <!-- Menu catering Start -->
-  <div class="menu-item" onclick="toggleContent('catering', this)">
-    <span class="tittle-menu">Catering</span>
-    <span class="menu-description">
-      "Hidangan berkualitas untuk berbagai acara, dengan cita rasa istimewa."
-    </span>
-    <i class="bi bi-arrow-down-circle"></i>
+  <!-- Menu Catering -->
+  <div class="menu-item" style="background-image: url('assets/image/menu-villa.png');"
+    onclick="toggleContent('catering', this)">
+    <div class="menu-text">
+      <span class="tittle-menu">CATERING</span>
+      <span class="menu-description">
+        "Hidangan berkualitas untuk berbagai acara, dengan cita rasa istimewa."
+      </span>
+    </div>
+    <i class="uil uil-arrow-right"></i>
   </div>
-  <div id="catering-content" class="menu-content" style="display: none;">
-  </div>
-  <!-- Menu catering end -->
+  <div id="catering-content" class="menu-content" style="display: none;"></div>
 </div>
 
 </div>

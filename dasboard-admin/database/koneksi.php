@@ -4,7 +4,7 @@
 function load_env()
 {
     // Tentukan path ke file .env berdasarkan environment
-    if ($_SERVER['HTTP_HOST'] == 'localhost:8080' || $_SERVER['HTTP_HOST'] == '192.168.1.4') {
+    if ($_SERVER['HTTP_HOST'] == 'localhost:8080' || $_SERVER['HTTP_HOST'] == '192.168.1.7:8080') {
         // Environment lokal
         $envPath = __DIR__ . '/.env'; // File .env berada di folder yang sama dengan config.php
     } else {
@@ -40,7 +40,7 @@ try {
     $env = load_env();
 
     // Tentukan apakah di localhost atau di hosting
-    $isLocal = ($_SERVER['HTTP_HOST'] == 'localhost:8080' || $_SERVER['HTTP_HOST'] == '192.168.1.4');
+    $isLocal = ($_SERVER['HTTP_HOST'] == 'localhost:8080' || $_SERVER['HTTP_HOST'] == '192.168.1.7:8080');
 
     // Definisikan konstanta untuk database pertama
     define('BASE_URL', $isLocal ? $env['BASE_URL_LOCAL'] : $env['BASE_URL_PRODUCTION']);

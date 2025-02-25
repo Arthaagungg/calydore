@@ -698,16 +698,6 @@ input[type="checkbox"]:not(:checked) + .for-dropdown svg #bottom-line {
 }
 /* Styling the menu items */
 
-.menu-item i {
-  margin-right: 15px;
-  font-size: 1.5rem;
-  color: #007bff;
-}
-
-.menu-item:hover {
-  background-color: #e9ecef; /* Light hover effect */
-}
-
 /* Dropdown Menu */
 .dropdown-menu {
   margin-top: 0.5rem;

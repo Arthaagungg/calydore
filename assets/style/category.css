@@ -13,50 +13,69 @@
   padding: 10px;
 }
 
-/* ====== Menu Item ====== */
+/* ====== Menu Item ====== */ /* Base style untuk menu-item */
 .menu-item {
   width: 100%;
-  padding: 10px;
-  background: linear-gradient(135deg, #110f70, #3e45af, #110f70);
-  color: #ffffff;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease,
-    box-shadow 0.3s ease;
+  height: 89px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-.menu-item .tittle-menu {
-  min-width: 100px; /* Sesuaikan dengan panjang judul terpanjang */
-}
-.menu-description {
-  flex-grow: 1;
-  padding-left: 10px;
-  font-size: 0.8rem;
-  color: #ffffff;
-  max-width: 70%;
+  justify-content: space-between;
+  padding: 5px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.menu-item i {
-  transition: transform 0.3s ease, color 0.3s ease;
-  margin-left: auto;
+.menu-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.tittle-menu {
   font-size: 1.5rem;
-  color: #ffffff;
-  transition: transform 0.3s ease;
-}
-.menu-item:hover i {
-  transform: rotate(90deg);
-}
-/* Menambahkan animasi rotasi untuk ikon panah */
-.menu-item i.rotate {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
+  font-weight: bold;
 }
 
+.menu-description {
+  font-size: 0.9rem;
+  text-align: justify;
+  line-height: 1.5;
+  width: 80%; /* Sesuaikan lebar deskripsi */
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    padding: 15px;
+  }
+  .tittle-menu {
+    font-size: 1.2rem;
+  }
+  .menu-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-item {
+    padding: 10px;
+  }
+  .tittle-menu {
+    font-size: 1rem;
+  }
+  .menu-description {
+    font-size: 0.7rem;
+  }
+}
 /* ====== Content Box Styling ====== */
 
 /* ====== Sub-box Styling ====== */
@@ -283,6 +302,7 @@
   }
 }
 .sub-box-content {
+  min-height: 238px;
   padding: 6px;
   display: flex;
   flex-direction: column;
